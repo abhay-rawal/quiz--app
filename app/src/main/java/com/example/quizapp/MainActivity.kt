@@ -28,10 +28,13 @@ class MainActivity : AppCompatActivity() {
 
             var builder = AlertDialog.Builder(this)
             val cal = Calendar.getInstance();
-            val date = cal.get(Calendar.DATE)
-            val time = cal.get(Calendar.HOUR_OF_DAY)
+            val month = cal.get(Calendar.MONTH)
+            val year = cal.get(Calendar.YEAR)
+            val day = cal.get(Calendar.DAY_OF_MONTH)
+            val hour = cal.get(Calendar.HOUR_OF_DAY)
+            val minute = cal.get(Calendar.MINUTE)
             builder.setTitle("Result");
-            builder.setMessage("“CongratulationCons! You submitted on the $date and $time, you achieved $toalPercentage")
+            builder.setMessage("“CongratulationCons! You submitted on the $month/$year/$day and $hour:$minute, you achieved $toalPercentage")
             builder.setPositiveButton("OK"){dialogInterface, which ->
                 dialogInterface.dismiss()
             }
